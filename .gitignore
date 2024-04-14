@@ -1,4 +1,9 @@
-.env.edn
 /node_modules/
 /.shadow-cljs/
 /package-lock.json
+.env.edn
+/demo/dist/bundle.js
+/demo/dist/bundle.js.LICENSE.txt
+/demo/node_modules/
+/demo/package-lock.json
+/out/daisy.js
