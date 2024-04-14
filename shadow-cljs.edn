@@ -1,0 +1,27 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev" "src/daisy" "src/test"]
+
+ :dependencies
+ [[reagent "1.2.0"]
+  [cider/cider-nrepl "0.35.1"]
+  [stylefy "3.2.0"]
+  [stylefy/reagent "3.0.0"]
+  [http-kit "2.8.0-RC1"]]
+
+ :dev-http
+ {8020 "public"}
+
+ :builds
+ {:dev    {:target     :browser
+           :output-dir "public/js"
+           :asset-path "/js"
+           :modules    {:daisy {:init-fn penpot.main/render!}}}
+  :module {:target     :esm
+           :output-dir  "out"
+           :output-to   "out/daisy.js"
+           :cache-level :off
+           :modules     {:daisy {:exports {version         penpot.main/version
+                                           initTokenStyles penpot.main/tokens
+                                           dsButton        penpot.main/Button
+                                           }}}}}}
